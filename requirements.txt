@@ -1,2 +1,4 @@
 mcp
 mcp[cli]
+azure-ai-inference
+azure-core

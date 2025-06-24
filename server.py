@@ -1,15 +1,19 @@
 # server.py
-
 from mcp.server.fastmcp import FastMCP
-# This is the shared MCP server instance
-mcp = FastMCP("mix_server")
 
-from server import mcp
+# Create an MCP server
+mcp = FastMCP("Demo")
 
-# Import tools so they get registered via decorators
-import tools.csv_tools
-import tools.parquet_tools
 
-# Entry point to run the server
-if __name__ == "__main__":
-    mcp.run()
+# Add an addition tool
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers"""
+    return a + b
+
+
+# Add a dynamic greeting resource
+@mcp.resource("greeting://{name}")
+def get_greeting(name: str) -> str:
+    """Get a personalized greeting"""
+    return f"Hello, {name}!"
