@@ -3,7 +3,7 @@
 To start the inspector on the server, run:
 
 ```bash
-mcp run dev
+mcp dev server.py
 ```
 
 To start the server, run:

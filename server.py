@@ -17,3 +17,10 @@ def add(a: int, b: int) -> int:
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
     return f"Hello, {name}!"
+
+
+# Add a prompt for summarization
+@mcp.prompt()
+def summarize_request(text: str) -> str:
+    """Generate a prompt asking for a summary."""
+    return f"Please summarize the following text:\n\n{text}"
