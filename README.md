@@ -18,3 +18,17 @@ To start the clients, run:
 python client.py
 python client_llm.py
 ```
+
+## SSE server
+
+Run the SSE server with:
+
+```bash
+uvicorn server_sse:app
+```
+
+and the inspector with:
+
+```bash
+npx @modelcontextprotocol/inspector --cli http://localhost:8000/sse --method tools/list
+```
